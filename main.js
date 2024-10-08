@@ -50,7 +50,11 @@ function start() {
                 } else if (sorte < 0.95){
                     alert(`Você pensou rapidamente e conectou seu notebook imaginário a uma porta USB escondida atrás de uma pedra.`);
                     alert(`Dessa maneira, você hackeou o código do jogo eletrônico e causou ${personagens[profissao].dano} de dano em ${chefe.nome}.`);
-                    chefe.vida = (chefe.vida - personagens[profissao].dano) <= 0 ? 0 : (chefe.vida - personagens[profissao].dano);
+                    if ((chefe.vida - personagens[profissao].dano) <= 0)
+                        return 0;
+                    else
+                        chefe.vida -= personagens[profissao].dano;
+                    /* chefe.vida = (chefe.vida - personagens[profissao].dano) <= 0 ? 0 : (chefe.vida - personagens[profissao].dano); */
                 } else {
                     alert(`Você é uma pessoa muito sagaz e teve uma ideia brilhante!`);
                     alert(`Você decidiu usar o comando "taskkill /f /im ${chefe.nome}.exe" no CMD e derrotou o chefe com o apertar de um enter!`);
@@ -58,42 +62,50 @@ function start() {
                 }
             } else if (profissao == 2){
                 if (sorte < 0.1){
-                    alert(`Você tentou usar o ChatGPT para te dar uma solução eficaz para derrotar ${chefe.nome}...`);
-                    alert(`mas ele te deu uma resposta não tão confiável, o que fez você executar um movimento errado e cair em um buraco profundo.`);
-                    personagens[profissao].vida = 0;
+                    alert(`Você achou que esperniar e gritar bem alto iria causar algum efeito significativo em ${chefe.nome}...`);
+                    alert(`mas como ${chefe.nome} não possui muita sensiblidade ao som, você acabou gritando até morrer.`);
+                    return personagens[profissao].vida = 0;
                 } else if (sorte < 0.55){
-                    alert(`Você tentou correr em direção de ${chefe.nome} enquanto executava selos de mão para lançar um ninjutsu aprendido em Boruto.`);
-                    alert(`Entretanto, você, por ser ${personagens[profissao].nome}, não saiu do lugar, além de não ter sido capaz de lançar o ninjutstu, já que na vida real isso não existe e, por isso, você nunca teve a oportunidade de treinar suas habilidades antes.`);
+                    alert(`Antes de atacar ${chefe.nome}, você viu que seu iPhone 16 Pro Max decarregou.`);
+                    alert(`Então, você não viu outra escolha, senão ir a loja virtual da Apple e comprar outro iPhone 16 Pro Max (passou a vez).`);
                 } else if (sorte < 0.95){
-                    alert(`Você pensou rapidamente e conectou seu notebook imaginário a uma porta USB escondida atrás de uma pedra.`);
-                    alert(`Dessa maneira, você hackeou o código do jogo eletrônico e causou ${personagens[profissao].dano} de dano em ${chefe.nome}.`);
-                    chefe.vida = (chefe.vida - personagens[profissao].dano) <= 0 ? 0 : (chefe.vida - personagens[profissao].dano);
+                    alert(`Usando todos os seus "conhecimentos" na disciplina de Embalagens e Aditivos, você pegou uma sacola plástica e enforcou ${chefe.nome}.`);
+                    alert(`Enquanto ${chefe.nome} agoiava com a sacola, seus conhecimentos na disciplina de Tecnologia em Carnes permitiu que você fizesse cortasse seu corpo e fizesse um hambúrguer de sua carne!`);
+                    if ((chefe.vida - personagens[profissao].dano) <= 0)
+                        return 0;
+                    else
+                        chefe.vida -= personagens[profissao].dano;
+                    /* chefe.vida = (chefe.vida - personagens[profissao].dano) <= 0 ? 0 : (chefe.vida - personagens[profissao].dano); */
                 } else {
-                    alert(`Você é uma pessoa muito sagaz e teve uma ideia brilhante!`);
-                    alert(`Você decidiu usar o comando "taskkill /f /im ${chefe.nome}.exe" no CMD e derrotou o chefe com o apertar de um enter!`);
-                    chefe.vida = 0;
+                    alert(`Após uma falha gravíssima em sua aula prática de Tecnologia de Leite, você fez ${chefe.nome} comer um doce de leite estragado!`);
+                    alert(`Sem lhe contar a verdade, ${chefe.nome} comeu o doce e sentiu uma forte dor de barriga.`);
+                    alert(`Não se sabe se ele morreu ou continua preso no banheiro por conta da diarreia, mas ${chefe.nome} não voltou para a batalha.`)
+                    return chefe.vida = 0;
                 }
             } else{
                 if (sorte < 0.08){
-                    alert(`Você tentou usar o ChatGPT para te dar uma solução eficaz para derrotar ${chefe.nome}...`);
-                    alert(`mas ele te deu uma resposta não tão confiável, o que fez você executar um movimento errado e cair em um buraco profundo.`);
-                    personagens[profissao].vida = 0;
+                    alert(`Você tem emoções e impulsos muito aflorados e explosivos, típicos de um aluno de agropecuária.`);
+                    alert(`Por tentar atacar por intermédios de seus impulsos de bravura, acabou não pensando em uma estratégia além da força e abriu uma oportunidade para ${chefe.nome} te ludibriar e te matar!`);
+                    return personagens[profissao].vida = 0;
                 } else if (sorte < 0.5){
-                    alert(`Você tentou correr em direção de ${chefe.nome} enquanto executava selos de mão para lançar um ninjutsu aprendido em Boruto.`);
-                    alert(`Entretanto, você, por ser ${personagens[profissao].nome}, não saiu do lugar, além de não ter sido capaz de lançar o ninjutstu, já que na vida real isso não existe e, por isso, você nunca teve a oportunidade de treinar suas habilidades antes.`);
+                    alert(`Você desafiou ${chefe.nome} para uma partida de truco...`);
+                    alert(`mas por ${chefe.nome} não saber jogar truco, o ataque não surtiu efeito.`);
                 } else if (sorte < 0.93){
-                    alert(`Você pensou rapidamente e conectou seu notebook imaginário a uma porta USB escondida atrás de uma pedra.`);
-                    alert(`Dessa maneira, você hackeou o código do jogo eletrônico e causou ${personagens[profissao].dano} de dano em ${chefe.nome}.`);
-                    chefe.vida = (chefe.vida - personagens[profissao].dano) <= 0 ? 0 : (chefe.vida - personagens[profissao].dano);
+                    alert(`Você já iria atacar, mas seu corpo começou a sentir as "reações" do prato de 5 kg do almoço do IF.`);
+                    alert(`As "reações" liberadas espontaneamente continham alta quantidade de enxofre, fazendo ${chefe.nome} se intoxicar pelo cheiro!`);
+                    if ((chefe.vida - personagens[profissao].dano) <= 0)
+                        return 0;
+                    else
+                        chefe.vida -= personagens[profissao].dano;
+                    /* chefe.vida = (chefe.vida - personagens[profissao].dano) <= 0 ? 0 : (chefe.vida - personagens[profissao].dano); */
                 } else {
-                    alert(`Você é uma pessoa muito sagaz e teve uma ideia brilhante!`);
-                    alert(`Você decidiu usar o comando "taskkill /f /im ${chefe.nome}.exe" no CMD e derrotou o chefe com o apertar de um enter!`);
-                    chefe.vida = 0;
+                    alert(`Você quis pensar um pouco sobre como atacar de maneira eficaz ${chefe.nome}, mas ao fazer um simples cálculo errôneo da distância entre você e ele, ${chefe.nome} se abismou e morreu de desgosto.`);
+                    return chefe.vida = 0;
                 }
             }
         } else {
             if (profissao == 1){
-                if (sorte < 0.2){
+                if (sorte <= 0.1){
                     alert(`Você acabou pensando demais na melhor maneira para se defender que abaixou sua guarda para que ${chefe.nome} pudesse te atacar duas vezes...`);
                     alert(`Que bestinha!`);
                     return personagens[profissao].vida = (personagens[profissao].vida - (chefe.dano * 2)) <= 0 ? 0 : (personagens[profissao].vida - (chefe.dano * 2))
@@ -101,7 +113,7 @@ function start() {
                     alert(`Você achou que a melhor maneira para recuar seria ficar exatamente atrás de ${chefe.nome}...`);
                     alert(`... mas enquanto ${chefe.nome} te procurava, ele tropeçou, esbarrou em você e causou ${Math.ceil((chefe.dano /2))} de dano em você!`);
                     return personagens[profissao].vida = (personagens[profissao].vida - (Math.ceil(chefe.dano / 2))) <= 0 ? 0 : (personagens[profissao].vida - (Math.ceil(chefe.dano / 2)))
-                } else if (sorte < 0.95){
+                } else if (sorte <= 0.95){
                     alert(`Mesmo em perigo, você lembrou que é um jogo eletrônico e resolveu usar trapaças para se teletransportar para longe de ${chefe.nome}!`);
                     return;
                 } else {
@@ -120,7 +132,7 @@ function start() {
                     alert(`Você com suas tcholices resolveu convidar ${chefe.nome} para tomar um chá de camomila com maracujá que você havia acabado de preparar.`);
                     alert(`Entretanto, o chá estava muito quente, fazendo ${chefe.nome} cuspir todo o chá em você quando foi beber!`);
                     return personagens[profissao].vida = (personagens[profissao].vida - (Math.ceil(chefe.dano / 2))) <= 0 ? 0 : (personagens[profissao].vida - (Math.ceil(chefe.dano / 2)))
-                } else if (sorte < 0.95){
+                } else if (sorte <= 0.95){
                     alert(`Você não tinha muito o que fazer, além de correr.`);
                     alert(`Você correu pela sua vida e conseguiu evitar um golpe iminente de ${chefe.nome}`);
                     return;
@@ -130,21 +142,23 @@ function start() {
                     return personagens[profissao].vida += 70;
                 }
             } else{
-                if (sorte < 0.08){
-                    alert(`Você tentou usar o ChatGPT para te dar uma solução eficaz para derrotar ${chefe.nome}...`);
-                    alert(`mas ele te deu uma resposta não tão confiável, o que fez você executar um movimento errado e cair em um buraco profundo.`);
-                    personagens[profissao].vida = 0;
+                if (sorte <= 0.18){
+                    alert(`Você tentou intimidar ${chefe.nome} com os truques de faca que você aprendeu na internet.`);
+                    alert(`Entretanto, você se desequilibrou com o seu canivete e acabou se cortando e ainda foi atacado por ${chefe.nome} enquanto estava destraído.`);
+                    return personagens[profissao].vida = (personagens[profissao].vida - 10 - chefe.dano) <= 0 ? 0 : (personagens[profissao].vida - 10 - chefe.dano);
                 } else if (sorte < 0.5){
-                    alert(`Você tentou correr em direção de ${chefe.nome} enquanto executava selos de mão para lançar um ninjutsu aprendido em Boruto.`);
-                    alert(`Entretanto, você, por ser ${personagens[profissao].nome}, não saiu do lugar, além de não ter sido capaz de lançar o ninjutstu, já que na vida real isso não existe e, por isso, você nunca teve a oportunidade de treinar suas habilidades antes.`);
-                } else if (sorte < 0.93){
-                    alert(`Você pensou rapidamente e conectou seu notebook imaginário a uma porta USB escondida atrás de uma pedra.`);
-                    alert(`Dessa maneira, você hackeou o código do jogo eletrônico e causou ${personagens[profissao].dano} de dano em ${chefe.nome}.`);
-                    chefe.vida = (chefe.vida - personagens[profissao].dano) <= 0 ? 0 : (chefe.vida - personagens[profissao].dano);
+                    alert(`Você percebeu que perto de você havia o mini trator de Seu Aurélio e viu a oportunidade de usar ele para escapar próximo ataque de ${chefe.nome}.`);
+                    alert(`Entretanto, o mini trator de Seu Aurélio anda a, aproximadamente, 20 km/h e mesmo dificultando o ataque de ${chefe.dano}, ele ainda conseguiu te alcançar e causar um pouco de dano (${Math.ceil(chefe.dano / 2)}) em você.`);
+                    return personagens[profissao].vida = (personagens[profissao].vida - (Math.ceil(chefe.dano / 2))) <= 0 ? 0 : (personagens[profissao].vida - (Math.ceil(chefe.dano / 2)))
+                } else if (sorte < 0.94){;
+                    alert(`Mesmo que seja um jogo eletrônico e optou por fugir do ataque de ${chefe.nome}, você viu o ônibus da El Shaday a poucos metros de distância e suas emoções (preguiça) falaram mais alto: "Não vou ver mais aulas, preciso ir embora!"`);
+                    alert(`Apesar do calor, bancos sujos e velocidade reduzida, o ônibus pode proporcionar um escudo (carcaça) contra os ataques de ${chefe.nome} e te deixar um pouco distante dele, no primeiro ponto de parada.`);
+                    return;
                 } else {
-                    alert(`Você é uma pessoa muito sagaz e teve uma ideia brilhante!`);
-                    alert(`Você decidiu usar o comando "taskkill /f /im ${chefe.nome}.exe" no CMD e derrotou o chefe com o apertar de um enter!`);
-                    chefe.vida = 0;
+                    alert(`Perto de você, haviam várias árvores frutíferas e você não resistiu: teve que comer várias delas!`);
+                    alert(`Além disso, a 3 km de distância, você viu o refeitório do IF. Você, então, cortou fila e fez uma montanha de comida no prato`);
+                    alert(`Além de se distanciar de ${chefe.nome}, ainda obteve 90 pontos de vida!`);
+                    return personagens[profissao].vida += 90;
                 }
             }
         }
