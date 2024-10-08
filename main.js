@@ -148,7 +148,7 @@ function start() {
                     return personagens[profissao].vida = (personagens[profissao].vida - 10 - chefe.dano) <= 0 ? 0 : (personagens[profissao].vida - 10 - chefe.dano);
                 } else if (sorte < 0.5){
                     alert(`Você percebeu que perto de você havia o mini trator de Seu Aurélio e viu a oportunidade de usar ele para escapar próximo ataque de ${chefe.nome}.`);
-                    alert(`Entretanto, o mini trator de Seu Aurélio anda a, aproximadamente, 20 km/h e mesmo dificultando o ataque de ${chefe.dano}, ele ainda conseguiu te alcançar e causar um pouco de dano (${Math.ceil(chefe.dano / 2)}) em você.`);
+                    alert(`Entretanto, o mini trator de Seu Aurélio anda a, aproximadamente, 20 km/h e mesmo dificultando o ataque de ${chefe.nome}, ele ainda conseguiu te alcançar e causar um pouco de dano (${Math.ceil(chefe.dano / 2)}) em você.`);
                     return personagens[profissao].vida = (personagens[profissao].vida - (Math.ceil(chefe.dano / 2))) <= 0 ? 0 : (personagens[profissao].vida - (Math.ceil(chefe.dano / 2)))
                 } else if (sorte < 0.94){;
                     alert(`Mesmo que seja um jogo eletrônico e optou por fugir do ataque de ${chefe.nome}, você viu o ônibus da El Shaday a poucos metros de distância e suas emoções (preguiça) falaram mais alto: "Não vou ver mais aulas, preciso ir embora!"`);
@@ -156,7 +156,7 @@ function start() {
                     return;
                 } else {
                     alert(`Perto de você, haviam várias árvores frutíferas e você não resistiu: teve que comer várias delas!`);
-                    alert(`Além disso, a 3 km de distância, você viu o refeitório do IF. Você, então, cortou fila e fez uma montanha de comida no prato`);
+                    alert(`Além disso, a 3 km de distância, você viu o refeitório do IF. Você, então, cortou fila e fez uma montanha de comida no prato.`);
                     alert(`Além de se distanciar de ${chefe.nome}, ainda obteve 90 pontos de vida!`);
                     return personagens[profissao].vida += 90;
                 }
@@ -167,7 +167,7 @@ function start() {
             alert(`${chefe.nome} até tentou te atacar, mas você começou a gritar estranhamente "T.A.! (T.A.!) MORAL! (MORAL!)", o que deixou ele assustado!`);
         } else{
             alert(`Mesmo sendo um jogo eletrônico, a dor que você sente ainda é real...`);
-            alert(`... e a percepção de que a morte está próxima também!`)
+            (personagens[profissao].vida - chefe.dano) <= 75 ? alert(`... e a percepção de que a morte está próxima também!`) : 0;
             alert(`${chefe.nome} causou ${chefe.dano} de dano em você.`);
             personagens[profissao].vida = (personagens[profissao].vida - chefe.dano) <= 0 ? 0 : (personagens[profissao].vida - chefe.dano);
         }
@@ -206,7 +206,7 @@ function start() {
         alert("O que piora mais ainda a sua situação é essa profissao de \"Aluno de Agroindústria\".");
         alert("Querido(a), seu dinheiro e dancinha do TikTok não funcionarão aqui!");
     } else{
-        alert("Pelo menos você tem um canivete em mãos, oq eu permite você procurar comida por aí.");
+        alert("Pelo menos você tem um canivete em mãos, o que te permite procurar por comida por aí.");
     }
     
     alert("Mas chega de texto! Você se depara com um dinossauro 🐱‍🐉 faminto!")
