@@ -307,6 +307,6 @@ function start() {
                 "Ouro: " + personagens[profissao].ouro);
     }
 
-    alert();
+    alert("Você andou mais um pouco e encontrou um prédio à distância, mas você pisou em um galho que fez aparecer, misteriosamente, um q");
 
 }
