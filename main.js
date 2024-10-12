@@ -490,12 +490,13 @@ function start() {
     // Após a terceira batalha
     if (personagens[profissao].vida == 0){
         if (profissao == 1) alert(`${enemyCurso[profissao]}: "Achava mesmo que seria capaz de me enfrentar?"`);
-        else if (profissao == 2) alert(`${enemyCurso[profissao]}: ""`);
-        else alert(`${enemyCurso[profissao]}: ""`);
+        else if (profissao == 2) alert(`${enemyCurso[profissao]}: "Fala de derrota 2"`);
+        else alert(`${enemyCurso[profissao]}: "Fala de derrota 3"`);
+        alert("Você perdeu! KKKK");
         return;
     } else{
-        personagens[profissao].ouro += prof_mat.ouro;
-        alert("Excelente! Admito que você não teve uma luta fácil com esse \"professor\"...");
+        personagens[profissao].ouro += enemyCurso[profissao].ouro;
+        alert(". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .");
         alert("Status atual de " + personagens[profissao].nome + " após a batalha: \n" +
                 "Vida: " + personagens[profissao].vida + "\n" +
                 "Dano: " + personagens[profissao].dano + "\n" +
