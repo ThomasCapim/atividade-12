@@ -13,6 +13,7 @@ No início, você precisa escolher a profissão que representará o personagem q
 - Aluno de Agroindústria, uma profissão para aqueles que querem enfrentera um desafio a mais; e
 - Aluno de Agropecuária, para aqueles que querem uma profissão nem tão fácil e nem tão difícil.
 Após isso, o usuário enfrentará inimigo(s), atacando ou recuando, tendo probabilidades diferentes para que um ataque ou recuo funcione ou não.
+O usuário só vencerá o jogo se chegar vivo ao final das partidas.
 
 ## Autor
 Thomás Matos Mendes
