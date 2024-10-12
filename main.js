@@ -352,5 +352,5 @@ function start() {
                 "Ouro: " + personagens[profissao].ouro);
     }
 
-
+    alert();
 }
