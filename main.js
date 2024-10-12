@@ -1,7 +1,7 @@
 /* Vai ter umas três opções de personagens, uma delas o nerd (informática) (acho que ele vai ser infalível), o aluno de agroin e o aluno de agropec
 */
 function start() {
-    let info_vida, agroin_vida, agropec_vida, informatica, agroindustria, agropecuaria, dinossauro
+    let info_vida, agroin_vida, agropec_vida, informatica, agroindustria, agropecuaria, dinossauro, prof_mat;
 
     do{
         info_vida = Math.floor(Math.random() * 101);
@@ -32,6 +32,7 @@ function start() {
         3: agropecuaria
     }
     dinossauro = new Personagem("Dinossauro", 300, 15, 100);
+    prof_mat = new Personagem("Professor de Matemática", 450, 17, 300);
 
     function batalha(profissao, chefe, opcao){
         let sorte = 0, azar = 0;
@@ -62,15 +63,15 @@ function start() {
                 }
             } else if (profissao == 2){
                 if (sorte < 0.1){
-                    alert(`Você achou que esperniar e gritar bem alto iria causar algum efeito significativo em ${chefe.nome}...`);
-                    alert(`mas como ${chefe.nome} não possui muita sensiblidade ao som, você acabou gritando até morrer.`);
+                    alert(`Você achou que espernear e gritar bem alto iria causar algum efeito significativo em ${chefe.nome}...`);
+                    alert(`mas como ${chefe.nome} não possui muita sensibilidade ao som, você acabou gritando até morrer.`);
                     return personagens[profissao].vida = 0;
                 } else if (sorte < 0.48){
-                    alert(`Antes de atacar ${chefe.nome}, você viu que seu iPhone 16 Pro Max decarregou.`);
+                    alert(`Antes de atacar ${chefe.nome}, você viu que seu iPhone 16 Pro Max descarregou.`);
                     alert(`Então, você não viu outra escolha, senão ir a loja virtual da Apple e comprar outro iPhone 16 Pro Max (passou a vez).`);
                 } else if (sorte < 0.95){
                     alert(`Usando todos os seus "conhecimentos" na disciplina de Embalagens e Aditivos, você pegou uma sacola plástica e enforcou ${chefe.nome}.`);
-                    alert(`Enquanto ${chefe.nome} agoiava com a sacola, seus conhecimentos na disciplina de Tecnologia em Carnes permitiu que você fizesse cortasse seu corpo e fizesse um hambúrguer de sua carne!`);
+                    alert(`Enquanto ${chefe.nome} agoniava com a sacola, seus conhecimentos na disciplina de Tecnologia em Carnes permitiu que você fizesse cortasse seu corpo e fizesse um hambúrguer de sua carne!`);
                     if ((chefe.vida - personagens[profissao].dano) <= 0)
                         return chefe.vida = 0;
                     else
@@ -111,7 +112,7 @@ function start() {
                     return personagens[profissao].vida = (personagens[profissao].vida - (chefe.dano * 2)) <= 0 ? 0 : (personagens[profissao].vida - (chefe.dano * 2))
                 } else if (sorte < 0.3){
                     alert(`Você achou que a melhor maneira para recuar seria ficar exatamente atrás de ${chefe.nome}...`);
-                    alert(`... mas enquanto ${chefe.nome} te procurava, ele tropeçou, esbarrou em você e causou ${Math.ceil((chefe.dano /2))} de dano em você!`);
+                    alert(`... mas enquanto ${chefe.nome} te procurava, ele tropeçou, caiu em você e causou ${Math.ceil((chefe.dano /2))} de dano em você!`);
                     return personagens[profissao].vida = (personagens[profissao].vida - (Math.ceil(chefe.dano / 2))) <= 0 ? 0 : (personagens[profissao].vida - (Math.ceil(chefe.dano / 2)))
                 } else if (sorte <= 0.9){
                     alert(`Mesmo em perigo, você lembrou que é um jogo eletrônico e resolveu usar trapaças para se teletransportar para longe de ${chefe.nome}!`);
@@ -128,7 +129,7 @@ function start() {
                     alert(`${chefe.nome} despertou toda sua fúria e atacou-te duas vezes antes mesmo que pudesse pensar em como recuar.`)
                     return personagens[profissao].vida = (personagens[profissao].vida - (chefe.dano * 2)) <= 0 ? 0 : (personagens[profissao].vida - (chefe.dano * 2))
                 } else if (sorte < 0.36){
-                    alert(`Você olhou o seu Apple Watch e vii que eram 17 horas – a hora do chá!`);
+                    alert(`Você olhou o seu Apple Watch e viu que eram 17 horas – a hora do chá!`);
                     alert(`Você com suas tcholices resolveu convidar ${chefe.nome} para tomar um chá de camomila com maracujá que você havia acabado de preparar.`);
                     alert(`Entretanto, o chá estava muito quente, fazendo ${chefe.nome} cuspir todo o chá em você quando foi beber!`);
                     return personagens[profissao].vida = (personagens[profissao].vida - (Math.ceil(chefe.dano / 2))) <= 0 ? 0 : (personagens[profissao].vida - (Math.ceil(chefe.dano / 2)))
@@ -144,7 +145,7 @@ function start() {
             } else{
                 if (sorte <= 0.18){
                     alert(`Você tentou intimidar ${chefe.nome} com os truques de faca que você aprendeu na internet.`);
-                    alert(`Entretanto, você se desequilibrou com o seu canivete e acabou se cortando e ainda foi atacado por ${chefe.nome} enquanto estava destraído.`);
+                    alert(`Entretanto, você se desequilibrou com o seu canivete e acabou se cortando e ainda foi atacado por ${chefe.nome} enquanto estava distraído.`);
                     return personagens[profissao].vida = (personagens[profissao].vida - 10 - chefe.dano) <= 0 ? 0 : (personagens[profissao].vida - 10 - chefe.dano);
                 } else if (sorte < 0.33){
                     alert(`Você percebeu que perto de você havia o mini trator de Seu Aurélio e viu a oportunidade de usar ele para escapar próximo ataque de ${chefe.nome}.`);
@@ -264,12 +265,19 @@ function start() {
             alert(`Mas ${personagens[profissao].nome} não desistem assim com tanta facilidade! Continue em frente.`);
     }
 
-    alert("Enfim, você continuou a sua camiana e encontra um homem baixo e com pouco cabelo. Ele não fala nada, mas dá um sorriso discreto para você.");
+    alert("Enfim, você continuou a sua caminhada e encontra um homem baixo e com pouco cabelo. Ele não fala nada, mas dá um sorriso discreto para você.");
     if (profissao == 1)
         alert("Este homem lhe parece familiar, mas você não consegue lembrar quem exatamente.");
     do{
         let mensagem = "de sua bolsa uma poção, que"
-        duvida = prompt("O homem retira " + mensagem + " possui uma etiqueta indicando \"50 ouros\", e estende até você.\nComprar?\n1 - Sim\n2 - Não");
+        do{
+            duvida = prompt("O homem retira " + mensagem + " possui uma etiqueta indicando \"50 ouros\", e estende até você.\n" + 
+                            "Comprar?\n1 - Sim\n2 - Não\n\n" +
+                            "Status atual de " + personagens[profissao].nome + ": \n" +
+                            "Vida: " + personagens[profissao].vida + "\n" +
+                            "Dano: " + personagens[profissao].dano + "\n" +
+                            "Ouro: " + personagens[profissao].ouro);
+        }while(duvida < 1 || duvida > 2);
         if (duvida == 1 && personagens[profissao].ouro == 100){
             personagens[profissao].ouro -= 50;
             sorte = Math.random();
@@ -307,6 +315,42 @@ function start() {
                 "Ouro: " + personagens[profissao].ouro);
     }
 
-    alert("Você andou mais um pouco e encontrou um prédio à distância, mas você pisou em um galho que fez aparecer, misteriosamente, um q");
+    // Segunda batalha
+    alert(`Você andou mais um pouco e encontrou um prédio à distância, mas você pisou em um galho que fez aparecer, misteriosamente, um ${prof_mat.nome} que encara-te friamente!`);
+    alert("(A presença dele te incomoda psicologicamente)");
+    do{
+        do{
+            combate_opcao = prompt("O que você faria nessa situação... 😳\n" +
+                            "Chefe: " + prof_mat.nome + "\n" +
+                            "Vida: " + prof_mat.vida + "\n" +
+                            "Dano: " + prof_mat.dano + "\n" +
+                            "Ouro: " + prof_mat.ouro + "\n\n\n" +
+
+                            "Combatente: " + personagens[profissao].nome + "\n" +
+                            "Vida: " + personagens[profissao].vida + "\n" +
+                            "Dano: " + personagens[profissao].dano + "\n" +
+                            "Ouro: " + personagens[profissao].ouro + "\n\n\n" +
+
+                            "1 - Atacar com toda sua força!\n2 - Recuar furtivamente");
+            combate_opcao != 1 && combate_opcao != 2 ? alert("Presta atenção, cara! Escolhe 1 para atacar ou 2 para recuar!!!") : false;
+        }while(combate_opcao != 1 && combate_opcao != 2);
+
+        batalha(profissao, prof_mat, combate_opcao);
+        alert(`Sua vida final: ${personagens[profissao].vida} – Vida final do chefe: ${prof_mat.vida}`);
+    }while(personagens[profissao].vida > 0 && prof_mat.vida > 0);
+
+    // Após a segunda batalha
+    if (personagens[profissao].vida == 0){
+        alert("Você perdeu! KKKK");
+        return;
+    } else{
+        personagens[profissao].ouro += dinossauro.ouro;
+        alert("Excelente! Admito que você não teve uma luta fácil com esse \"professor\"...");
+        alert("Status atual de " + personagens[profissao].nome + " após a batalha: \n" +
+                "Vida: " + personagens[profissao].vida + "\n" +
+                "Dano: " + personagens[profissao].dano + "\n" +
+                "Ouro: " + personagens[profissao].ouro);
+    }
+
 
 }
