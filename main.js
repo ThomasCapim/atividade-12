@@ -1,7 +1,7 @@
 /* Vai ter umas três opções de personagens, uma delas o nerd (informática) (acho que ele vai ser infalível), o aluno de agroin e o aluno de agropec
 */
 function start() {
-    let info_vida, agroin_vida, agropec_vida, informatica, agroindustria, agropecuaria, dinossauro, prof_mat;
+    let info_vida, agroin_vida, agropec_vida, informatica, agroindustria, agropecuaria, dinossauro, prof_mat, ini_informatica, ini_agroindustria, ini_agropecuaria;
 
     do{
         info_vida = Math.floor(Math.random() * 101);
@@ -23,7 +23,7 @@ function start() {
     }
 
     // Heróis
-    informatica = new Personagem("Aluno de Informática", info_vida, Math.floor(info_vida * 1.2), 400);
+    informatica = new Personagem("Aluno de Informática", info_vida, Math.floor(info_vida * 1.2), 0);
     agroindustria = new Personagem("Aluno de Agroindústria", agroin_vida, Math.floor(agroin_vida * 0.7), 100);
     agropecuaria = new Personagem("Aluno de Agropecuária", agropec_vida, Math.floor(agropec_vida * 0.9), 0);
     const personagens = {
@@ -31,8 +31,17 @@ function start() {
         2: agroindustria,
         3: agropecuaria
     }
+
     dinossauro = new Personagem("Dinossauro", 300, 15, 100);
     prof_mat = new Personagem("Professor de Matemática", 450, 17, 300);
+    ini_informatica = new Personagem("Arthur de WEB", 550, 22, 600);
+    ini_agroindustria = new Personagem("Professor de Agroin", 450, 17, 300);
+    ini_agropecuaria = new Personagem("Professor de Agropec", 450, 17, 300);
+    const enemyCurso = {
+        1: ini_informatica,
+        2: ini_agroindustria,
+        3: ini_agropecuaria
+    }
 
     function batalha(profissao, chefe, opcao){
         let sorte = 0, azar = 0;
@@ -266,7 +275,7 @@ function start() {
             alert(`Mas ${personagens[profissao].nome} não desistem assim com tanta facilidade! Continue em frente.`);
     }
     }
-    
+
     // Parte do homem misterioso e as poções misteriosas
     alert("Enfim, você continuou a sua caminhada e encontra um homem baixo e com pouco cabelo. Ele não fala nada, mas dá um sorriso discreto para você.");
     if (profissao == 1)
@@ -440,4 +449,9 @@ function start() {
             "Ouro: " + personagens[profissao].ouro);
     }
     alert("Antes de se distanciar da caixa, ela imprime um bilhete dizendo \"A resposta que procuras está logo a frente\".");
+
+    alert("Você decide, então, seguir na sua jornada, passando de livro em livro.");
+    alert("Havia livros pequenos e grandes; livros de contos, romance e didáticos; livros com páginas arrancadas ou riscadas; livros em estantes cheias e estantes com apenas um livro, em especial...");
+    alert("Apesar de ser uma grande biblioteca, sua organização é bastante peculiar.");
+    alert("Você sobe as escadas da biblioteca em direção a uma única sala aberta")
 }
