@@ -23,7 +23,7 @@ function start() {
     }
 
     // Heróis
-    informatica = new Personagem("Aluno de Informática", info_vida, Math.floor(info_vida * 1.2), 0);
+    informatica = new Personagem("Aluno de Informática", info_vida, Math.floor(info_vida * 1.2), 400);
     agroindustria = new Personagem("Aluno de Agroindústria", agroin_vida, Math.floor(agroin_vida * 0.7), 100);
     agropecuaria = new Personagem("Aluno de Agropecuária", agropec_vida, Math.floor(agropec_vida * 0.9), 0);
     const personagens = {
@@ -175,7 +175,7 @@ function start() {
     }
 
     // Onde começa o jogo de fato
-    let resposta_final, profissao, combate_opcao, duvida, sorte;
+    let resposta_final, profissao, combate_opcao, duvida, sorte, mensagem;
 
     alert("Você é um estudante do Instituto e acordou para mais um dia de aul...");
     alert("BANG!!! Você está dentro de um jogo eletrônico ultra desafiador e só você é capaz de se libertar dessa realidade!");
@@ -196,7 +196,7 @@ function start() {
         else if (profissao == '')
             alert("Responda alguma coisa, não deixe em branco!");
         else
-            alert("Escolha uma opção válida, viado!");
+            alert("Escolha uma opção válida, moço(a)!");
     }while(profissao < 1 || profissao > 3 || resposta_final != 1);
 
     alert("Bem, você não tem muito o que fazer. O que você faria? Iria fazer uma thread no Twitter? Que pena, o Twitter está banido (até o dia de 05/10/2024)!\n\nObs.: O Twitter voltou... Favor, não cancelar o jogo no Twitter...");
@@ -226,7 +226,7 @@ function start() {
                             "Ouro: " + personagens[profissao].ouro + "\n\n\n" +
 
                             "1 - Atacar com toda sua força!\n2 - Recuar furtivamente");
-            combate_opcao != 1 && combate_opcao != 2 ? alert("Presta atenção, cara! Escolhe 1 para atacar ou 2 para recuar!!!") : false;
+            combate_opcao != 1 && combate_opcao != 2 ? alert("Presta atenção, cara! Escolhe 1 para atacar ou 2 para recuar!!!") : 0;
         }while(combate_opcao != 1 && combate_opcao != 2);
 
         batalha(profissao, dinossauro, combate_opcao);
@@ -268,8 +268,8 @@ function start() {
     alert("Enfim, você continuou a sua caminhada e encontra um homem baixo e com pouco cabelo. Ele não fala nada, mas dá um sorriso discreto para você.");
     if (profissao == 1)
         alert("Este homem lhe parece familiar, mas você não consegue lembrar quem exatamente.");
+    mensagem = "de sua bolsa uma poção, que";
     do{
-        let mensagem = "de sua bolsa uma poção, que"
         do{
             duvida = prompt("O homem retira " + mensagem + " possui uma etiqueta indicando \"50 ouros\", e estende até você.\n" + 
                             "Comprar?\n1 - Sim\n2 - Não\n\n" +
@@ -277,7 +277,8 @@ function start() {
                             "Vida: " + personagens[profissao].vida + "\n" +
                             "Dano: " + personagens[profissao].dano + "\n" +
                             "Ouro: " + personagens[profissao].ouro);
-        }while(duvida < 1 || duvida > 2);
+            duvida != 1 && duvida != 2 ? alert("Presta atenção, cara! Escolhe 1 ou 2!!!") : 0;
+        }while(duvida != 1 && duvida != 2);
         if (duvida == 1 && personagens[profissao].ouro == 100){
             personagens[profissao].ouro -= 50;
             sorte = Math.random();
@@ -304,7 +305,7 @@ function start() {
         }
         mensagem = "outra poção de sua bolsa, que também";
     }while(personagens[profissao].ouro >= 50 && personagens[profissao].vida > 0);
-    if (personagens[profissao].vida == 0){
+    if (personagens[profissao].vida <= 0){
         alert("Você morreu com poção desconhecida! KKKK");
         return;
     } else{
@@ -344,7 +345,7 @@ function start() {
         alert("Você perdeu! KKKK");
         return;
     } else{
-        personagens[profissao].ouro += dinossauro.ouro;
+        personagens[profissao].ouro += prof_mat.ouro;
         alert("Excelente! Admito que você não teve uma luta fácil com esse \"professor\"...");
         alert("Status atual de " + personagens[profissao].nome + " após a batalha: \n" +
                 "Vida: " + personagens[profissao].vida + "\n" +
@@ -352,5 +353,87 @@ function start() {
                 "Ouro: " + personagens[profissao].ouro);
     }
 
-    alert();
+    alert("Após esse conflito, você decide adentrar-se no prédio agora a sua frente.");
+    alert("Você percebe é uma imensa biblioteca!")
+    profissao == 2 || profissao == 3 ? alert("Você já sente um certo calafrio só de se aproximar dela...") : 0;
+    alert("Apesar da quantidade de livros, você acredita que a resposta por trás de tudo esteja neles.");
+    alert("Você, então, vai passando de livro em livro, olhando títulos que lhe chame a atenção, até que você encontra uma grande caixa ao centro da biblioteca");
+
+    do{
+        do{
+            duvida = prompt("A caixa possui um pequeno furo em cima dela e uma placa ao seu lado, em que se diz \"Coloque moedas de ouro\".\n" +
+                            "Colocar ouro?\nSim (digite um valor de 1 a " + personagens[profissao].ouro + ")\nNão (digite 0)\n\n" +
+                            "Status atual de " + personagens[profissao].nome + ": \n" +
+                            "Vida: " + personagens[profissao].vida + "\n" +
+                            "Dano: " + personagens[profissao].dano + "\n" +
+                            "Ouro: " + personagens[profissao].ouro);
+            if (duvida < 0)
+                alert("Não adianta pensar em um valor negativo, você não consegue remover ouro de dentro da caixa.");
+        }while(duvida < 0);
+        if (duvida > personagens[profissao].ouro){
+            alert("A sua intenção era colocar " + duvida + " de ouro, mas após depositar todas as suas " + personagens[profissao].ouro + ", percebeu que ainda faltavam " + (duvida - personagens[profissao].ouro) + " ouros e você não consegue remover suas moedas depositadas.");
+            duvida = personagens[profissao].ouro;
+        }
+        
+        if (duvida > 0){
+            sorte = Math.random();
+            if(sorte < 0.15){
+                alert("Você colocou várias moedas de uma vez e a caixa fez um barulho esquisito. A placa ao seu lado caiu e o buraco de entrada de moedas se fechou.");
+                break
+            } else {
+                let random = Math.random();
+                if (duvida == 1) {
+                    if (random < 0.25){
+                        alert("A caixa injeta, em questão de milissegundos, o conteúdo de uma agulha, que te causou coceira e diminuiu em 1 seu dano e vida");
+                        personagens[profissao].vida--;
+                        personagens[profissao].dano--;
+                    } else if (random < 0.5){
+                        alert("A caixa injeta, em questão de milissegundos, o conteúdo de uma agulha, aumentando em 1 sua vida.");
+                        personagens[profissao].vida++;
+                    } else if (random < 0.75){
+                        alert("A caixa injeta, em questão de milissegundos, o conteúdo de uma agulha, aumentando em 1 seu dano.");
+                        personagens[profissao].dano++;
+                    } else{
+                        alert("A caixa gera um bilhete que diz \"Obrigada pela doação!\".");
+                    }
+                } else if (duvida == 2) {
+                    if (random < 0.33) {
+                        alert("A caixa injeta, em questão de milissegundos, o conteúdo de uma agulha, que te causou coceira e diminuiu em 1 seu dano e vida.");
+                        personagens[profissao].vida--;
+                        personagens[profissao].dano--;
+                    } else if (random < 0.66) {
+                        alert("A caixa injeta, em questão de milissegundos, o conteúdo de uma agulha, aumentando em 1 seu dano e vida.");
+                        personagens[profissao].vida++;
+                        personagens[profissao].dano++;
+                    } else {
+                        alert("A caixa gera um bilhete que diz \"Obrigada pela doação!\".");
+                    }
+                } else {
+                    let vidaMin = Math.floor(duvida * 0.2);
+                    let vidaMax = Math.floor(duvida * 0.4);
+                    let danoMin = Math.floor(duvida * 0.1);
+                    let danoMax = Math.floor(duvida * 0.3);
+
+                    let vida = Math.floor(Math.random() * (vidaMax - vidaMin + 1)) + vidaMin;
+                    let dano = Math.floor(Math.random() * (danoMax - danoMin + 1)) + danoMin;
+                    personagens[profissao].vida += vida;
+                    personagens[profissao].dano += dano;
+                    alert("A caixa injeta, em questão de milissegundos, o conteúdo de uma agulha.");
+                    alert("Mesmo tendo sido tão rápido, você sentiu um arrepio bom, além de ter a vida e o dano aumentado em " + vida + " e " dano + " pontos, respectivamente.");
+                } 
+            }
+        } else
+            break;
+    }while(personagens[profissao].ouro > 0 || duvida != 0);
+    if (personagens[profissao].vida <= 0){
+        alert("O cara morreu por ter colocado pouca moeda e ter feito a proeza de pegar sempre a agulha envenenada! KKKK");
+        return;
+    } else{
+        alert("Status atual de " + personagens[profissao].nome + " após interagir com o homem misterioso: \n" +
+            "Vida: " + personagens[profissao].vida + "\n" +
+            "Dano: " + personagens[profissao].dano + "\n" +
+            "Ouro: " + personagens[profissao].ouro);
+
+        alert("Antes de se distanciar da caixa, ela imprime um bilhete dizendo \"A resposta que procuras está logo a frente\".");
+    }
 }
