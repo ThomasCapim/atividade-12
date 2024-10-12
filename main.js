@@ -450,8 +450,55 @@ function start() {
     }
     alert("Antes de se distanciar da caixa, ela imprime um bilhete dizendo \"A resposta que procuras está logo a frente\".");
 
+    // Exploração na biblioteca e o chefe do curso
+    {
     alert("Você decide, então, seguir na sua jornada, passando de livro em livro.");
     alert("Havia livros pequenos e grandes; livros de contos, romance e didáticos; livros com páginas arrancadas ou riscadas; livros em estantes cheias e estantes com apenas um livro, em especial...");
     alert("Apesar de ser uma grande biblioteca, sua organização é bastante peculiar.");
-    alert("Você sobe as escadas da biblioteca em direção a uma única sala aberta")
+    alert("Você sobe as escadas da biblioteca em direção a uma única sala aberta...");
+    alert(`mas ao se aproximar da sala, você é golpeado a distância por ${enemyCurso[profissao].nome}!`);
+    profissao == 1 ? alert("Você, então, reconheceu o rosto! Aquele mesmo homem misterioso, baixo, calvo e vendedor de poções era, nada menos que, Arthur.") : 0;
+    if (profissao == 1) alert(`${enemyCurso[profissao].nome}: "Você pode até querer entrar nessa sala, pois a responsabilidade é sua e não vou te impedir, mas vou cumprir minha responsabilidade, que é não deixar ninguém entrar!"`);
+    else if (profissao == 2) alert(`${enemyCurso[profissao].nome}: ""`);
+    else alert(`${enemyCurso[profissao].nome}: ""`);
+    }
+
+    // Início da terceira batalha
+    do{
+        do{
+            let mensagem = profissao == 1 ? "Pode vir, não estou nem aí."
+                        : profissao == 2 ? "Fala do chefe 2" : "Fala do chefe 3";
+            combate_opcao = prompt("O que você faria nessa situação... 😳\n" +
+                            "Chefe: " + enemyCurso[profissao].nome + ": " + mensagem + "\n" +
+                            "Vida: " + enemyCurso[profissao].vida + "\n" +
+                            "Dano: " + enemyCurso[profissao].dano + "\n" +
+                            "Ouro: " + enemyCurso[profissao].ouro + "\n\n\n" +
+
+                            "Combatente: " + personagens[profissao].nome + "\n" +
+                            "Vida: " + personagens[profissao].vida + "\n" +
+                            "Dano: " + personagens[profissao].dano + "\n" +
+                            "Ouro: " + personagens[profissao].ouro + "\n\n\n" +
+
+                            "1 - Atacar com toda sua força!\n2 - Recuar furtivamente");
+            combate_opcao != 1 && combate_opcao != 2 ? alert("Presta atenção, cara! Escolhe 1 para atacar ou 2 para recuar!!!") : false;
+        }while(combate_opcao != 1 && combate_opcao != 2);
+
+        batalha(profissao, enemyCurso[profissao], combate_opcao);
+        alert(`Sua vida final: ${personagens[profissao].vida} – Vida final do chefe: ${enemyCurso[profissao].vida}`);
+    }while(personagens[profissao].vida > 0 && enemyCurso[profissao].vida > 0);
+
+    // Após a terceira batalha
+    if (personagens[profissao].vida == 0){
+        if (profissao == 1) alert(`${enemyCurso[profissao]}: "Achava mesmo que seria capaz de me enfrentar?"`);
+        else if (profissao == 2) alert(`${enemyCurso[profissao]}: ""`);
+        else alert(`${enemyCurso[profissao]}: ""`);
+        return;
+    } else{
+        personagens[profissao].ouro += prof_mat.ouro;
+        alert("Excelente! Admito que você não teve uma luta fácil com esse \"professor\"...");
+        alert("Status atual de " + personagens[profissao].nome + " após a batalha: \n" +
+                "Vida: " + personagens[profissao].vida + "\n" +
+                "Dano: " + personagens[profissao].dano + "\n" +
+                "Ouro: " + personagens[profissao].ouro);
+    }
 }
