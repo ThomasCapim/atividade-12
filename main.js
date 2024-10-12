@@ -246,6 +246,7 @@ function start() {
                 "Ouro: " + personagens[profissao].ouro);
     }
     
+    {
     alert(`Bem, após gastar todo o seu conhecimento para enfrentar ${dinossauro.nome}, agora você terá que gastar todo o seu conhecimento para achar uma maneira de sair dessa realidade.`);
     duvida = confirm("Você acha que capaz de realizar tal façanha?\n\n\"Ok\" para \"sim\"\n\"Cancelar\" para \"não\"");
 
@@ -264,7 +265,9 @@ function start() {
         else
             alert(`Mas ${personagens[profissao].nome} não desistem assim com tanta facilidade! Continue em frente.`);
     }
-
+    }
+    
+    // Parte do homem misterioso e as poções misteriosas
     alert("Enfim, você continuou a sua caminhada e encontra um homem baixo e com pouco cabelo. Ele não fala nada, mas dá um sorriso discreto para você.");
     if (profissao == 1)
         alert("Este homem lhe parece familiar, mas você não consegue lembrar quem exatamente.");
@@ -353,12 +356,14 @@ function start() {
                 "Ouro: " + personagens[profissao].ouro);
     }
 
+    // Parte da livraria e a caixa misteriosa
+    {
     alert("Após esse conflito, você decide adentrar-se no prédio agora a sua frente.");
     alert("Você percebe é uma imensa biblioteca!")
     profissao == 2 || profissao == 3 ? alert("Você já sente um certo calafrio só de se aproximar dela...") : 0;
     alert("Apesar da quantidade de livros, você acredita que a resposta por trás de tudo esteja neles.");
     alert("Você, então, vai passando de livro em livro, olhando títulos que lhe chame a atenção, até que você encontra uma grande caixa ao centro da biblioteca");
-
+    }
     do{
         do{
             duvida = prompt("A caixa possui um pequeno furo em cima dela e uma placa ao seu lado, em que se diz \"Coloque moedas de ouro\".\n" +
@@ -419,7 +424,7 @@ function start() {
                     personagens[profissao].vida += vida;
                     personagens[profissao].dano += dano;
                     alert("A caixa injeta, em questão de milissegundos, o conteúdo de uma agulha.");
-                    alert("Mesmo tendo sido tão rápido, você sentiu um arrepio bom, além de ter a vida e o dano aumentado em " + vida + " e " dano + " pontos, respectivamente.");
+                    alert("Mesmo tendo sido tão rápido, você sentiu um arrepio bom, além de ter a vida e o dano aumentado em " + vida + " e " + dano + " pontos, respectivamente.");
                 } 
             }
         } else
@@ -433,7 +438,6 @@ function start() {
             "Vida: " + personagens[profissao].vida + "\n" +
             "Dano: " + personagens[profissao].dano + "\n" +
             "Ouro: " + personagens[profissao].ouro);
-
-        alert("Antes de se distanciar da caixa, ela imprime um bilhete dizendo \"A resposta que procuras está logo a frente\".");
     }
+    alert("Antes de se distanciar da caixa, ela imprime um bilhete dizendo \"A resposta que procuras está logo a frente\".");
 }
