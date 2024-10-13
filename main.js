@@ -184,7 +184,7 @@ function start() {
     }
 
     // Onde começa o jogo de fato
-    let resposta_final, profissao, combate_opcao, duvida, sorte, mensagem;
+    let resposta_final, profissao, combate_opcao, duvida, sorte, mensagem, contagem, i = 0;
 
     alert("Você é um estudante do Instituto e acordou para mais um dia de aul...");
     alert("BANG!!! Você está dentro de um jogo eletrônico ultra desafiador e só você é capaz de se libertar dessa realidade!");
@@ -453,7 +453,7 @@ function start() {
     // Exploração na biblioteca e o chefe do curso
     {
     alert("Você decide, então, seguir na sua jornada, passando de livro em livro.");
-    alert("Havia livros pequenos e grandes; livros de contos, romance e didáticos; livros com páginas arrancadas ou riscadas; livros em estantes cheias e estantes com apenas um livro, em especial...");
+    alert("Havia livros pequenos e grandes; livros de contos, romance e didáticos; livros com páginas arrancadas ou riscadas; livros em estantes cheias, estantes trancadas e estantes com apenas um livro, em especial...");
     alert("Apesar de ser uma grande biblioteca, sua organização é bastante peculiar.");
     alert("Você sobe as escadas da biblioteca em direção a uma única sala aberta...");
     alert(`mas ao se aproximar da sala, você é golpeado a distância por ${enemyCurso[profissao].nome}!`);
@@ -490,16 +490,61 @@ function start() {
     // Após a terceira batalha
     if (personagens[profissao].vida == 0){
         if (profissao == 1) alert(`${enemyCurso[profissao]}: "Achava mesmo que seria capaz de me enfrentar?"`);
-        else if (profissao == 2) alert(`${enemyCurso[profissao]}: "Fala de derrota 2"`);
-        else alert(`${enemyCurso[profissao]}: "Fala de derrota 3"`);
+        else if (profissao == 2) alert(`${enemyCurso[profissao]}: "Me desculpa! Foi pelo seu bem."`);
+        else alert(`${enemyCurso[profissao]}: "Eu avisei!"`);
         alert("Você perdeu! KKKK");
         return;
     } else{
         personagens[profissao].ouro += enemyCurso[profissao].ouro;
-        alert(". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .");
+        alert(". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\nAinda bem que não morreu. Ainda há muito o que descobrir...");
         alert("Status atual de " + personagens[profissao].nome + " após a batalha: \n" +
                 "Vida: " + personagens[profissao].vida + "\n" +
                 "Dano: " + personagens[profissao].dano + "\n" +
                 "Ouro: " + personagens[profissao].ouro);
+    }
+
+    // A verdade
+    {
+    alert(`Foi dura a sua jornada até aqui. Você não esperava que ${enemyCurso[profissao].nome} fosse estar aqui, principalmente para te enfrentar e impedir de entrar em uma sala estranha da biblioteca.`);
+    alert("Você, então, dá os passos finais até a porta e adentra-se à sala.");
+    alert("Tudo que você encontra são apenas dois telões na parede e um botão ao centro.");
+    alert("A ansiedade percorre por todo o seu corpo e a vontade de apertar o botão aumenta.");
+    alert("Você se aproxima do botão e tenta apertá-lo, mas ele está muito duro...");
+    alert("VOCÊ PRECISA APERTAR COM MAIS FORÇA!");
+
+    do{
+        contagem = 10 - i;
+        let pressBotao = confirm("Você precisa fazer mais força no botão!\nQuantidade de apertos restantes: " + contagem);
+
+        if (pressBotao == true)
+            i++;
+        else{
+            alert("Você desistiu de apertar o botão, saiu do meio do processo e agora terá que tentar tudo novamente.");
+            i = 0;
+        }
+    }while(i < 10);
+
+    alert("Você conseguiu, finalmente, apertar o botão e você percebeu que os telões se ligaram e um joystick apareceu do chão até você.");
+    alert("As imagens do telão são muito estranhas. Uma sala branca, um monte de equipamentos e cabos pela sala, pessoas de máscara e luvas.");
+    alert("Você move o joystick e as imagens no telão também se movimentam. Você começa a observar os elementos da sala: computadores, monitor de sinais vitais, suporte para soro e...");
+    alert("...com uma imagem de baixa resolução, você percebe uma das pessoas mascaradas utiliza uma camisa da BSI!");
+    alert("Suas perguntas aumentam e você fica mais desassossegado! Começa a mexer o joystick com mais velocidade e move o vídeo para uma visão inferior.");
+    alert("Você percebe então que há um corpo (as pernas e os troncos) em uma maca e sua visão... como se fosse o ponto de vista desse corpo. E essas roupas...");
+    alert("Não pode ser...");
+    alert("Esse corpo é SEU!");
+    alert("É você que está deitado na maca, cheio de fios conectados pelo seu corpo, tendo sinais vitais captados e soro entrando pela sua veia.");
+    alert("Você tenta fazer o máximo que pode. Aperta mais o botão, mexe mais o joystick, mas não sabe falar e seu corpo está preso na maca.");
+    alert("Um homem de máscara, exatamente aquele que estava usando a camisa da BSI, percebe a agitação da sua cabeça e ordena alguma coisa para outra pessoa.");
+    alert("Você vê que uma mulher se aproxima de você com uma seringa e injeta o conteúdo dela em você. A imagem dos telões começam a falhar, o joystick não sai do lugar e você escuta de longe:");
+    alert("\"Ainda não acabamos com você\"");
+    alert(". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .");
+    alert("Você fica em choque e começa a correr pela biblioteca em busca de respostas.");
+    alert("Você começa a olhar com mais atenção aos títulos e percebe padrões:");
+    alert("Livro \"Primeira vez na escolinha\"... \nLivro \"Meu primeiro amigo\"... \nLivro \"Viagens à praia\"...");
+    alert("\"Sexualidade\", \"Frustrações\", \"Bullying na escola\"...");
+    alert("Estantes \"A minha família\", com livros de páginas rasgadas ou riscadas, \"Conhecimentos acadêmicos\", com autoria dos professores que fizeram você aprender algo novo, \"Segredos\", contendo livros que ninguém nunca tocou, e... estante \"Amor\", com apenas um livro e com vários capítulos.");
+    alert("Você começa a perceber que essa biblioteca tem tudo o que você sabe, todas as suas memórias e novas memórias que estão, ainda, sendo escritas, em um livro em branco, sobre uma mesa, ao lado de uma caneta tinteiro.\n\nEssa é a sua mente! Você está preso(a) nela!");
+    alert("Você começa a pensar em tudo que viu até agora: as lutas, o ambiente, as pessoas, os telões...");
+    alert("Você foi colocado nessa situação, você ")
     }
 }

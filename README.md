@@ -10,7 +10,7 @@ O jogo se passa dentro de um jogo eletrônico e é necessário derrotar o(s) ini
 ## Como jogar?
 No início, você precisa escolher a profissão que representará o personagem que será utilizado para derrotar o(s) inimigo(s):
 - Aluno de Informática, a profissão mais forte;
-- Aluno de Agroindústria, uma profissão para aqueles que querem enfrentera um desafio a mais; e
+- Aluno de Agroindústria, uma profissão para aqueles que querem enfrentar um desafio a mais; e
 - Aluno de Agropecuária, para aqueles que querem uma profissão nem tão fácil e nem tão difícil.
 Após isso, o usuário enfrentará inimigo(s), atacando ou recuando, tendo probabilidades diferentes para que um ataque ou recuo funcione ou não.
 O usuário só vencerá o jogo se chegar vivo ao final das partidas.
