@@ -35,8 +35,8 @@ function start() {
     dinossauro = new Personagem("Dinossauro", 300, 15, 100);
     prof_mat = new Personagem("Professor de Matemática", 450, 17, 300);
     ini_informatica = new Personagem("Arthur de WEB", 550, 22, 600);
-    ini_agroindustria = new Personagem("Professor de Agroin", 450, 17, 300);
-    ini_agropecuaria = new Personagem("Professor de Agropec", 450, 17, 300);
+    ini_agroindustria = new Personagem("Roberta de Microbiologia", 400, 20, 1000);
+    ini_agropecuaria = new Personagem("Gera de Física", 500, 17, 200);
     const enemyCurso = {
         1: ini_informatica,
         2: ini_agroindustria,
@@ -459,8 +459,8 @@ function start() {
     alert(`mas ao se aproximar da sala, você é golpeado a distância por ${enemyCurso[profissao].nome}!`);
     profissao == 1 ? alert("Você, então, reconheceu o rosto! Aquele mesmo homem misterioso, baixo, calvo e vendedor de poções era, nada menos que, Arthur.") : 0;
     if (profissao == 1) alert(`${enemyCurso[profissao].nome}: "Você pode até querer entrar nessa sala, pois a responsabilidade é sua e não vou te impedir, mas vou cumprir minha responsabilidade, que é não deixar ninguém entrar!"`);
-    else if (profissao == 2) alert(`${enemyCurso[profissao].nome}: ""`);
-    else alert(`${enemyCurso[profissao].nome}: ""`);
+    else if (profissao == 2) alert(`${enemyCurso[profissao].nome}: "Eu posso até ser a madrinha da turma suas, mas pelo seu bem, eu não posso deixar você entrar nessa sala!"`);
+    else alert(`${enemyCurso[profissao].nome}: "Psiu! O que você está fazendo? Você não pode entrar aí não, pô! Aí não dá, né?"`);
     }
 
     // Início da terceira batalha
