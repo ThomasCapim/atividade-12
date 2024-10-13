@@ -249,7 +249,7 @@ function start() {
     } else{
         personagens[profissao].ouro += dinossauro.ouro;
         alert("Parabéns! Não fez mais que a obrigação para poder sobreviver.");
-        alert("Status atual de " + personagens[profissao].nome + " após a batalha: \n" +
+        alert("Status atuais de " + personagens[profissao].nome + " após a batalha: \n" +
                 "Vida: " + personagens[profissao].vida + "\n" +
                 "Dano: " + personagens[profissao].dano + "\n" +
                 "Ouro: " + personagens[profissao].ouro);
@@ -285,7 +285,7 @@ function start() {
         do{
             duvida = prompt("O homem retira " + mensagem + " possui uma etiqueta indicando \"50 ouros\", e estende até você.\n" + 
                             "Comprar?\n1 - Sim\n2 - Não\n\n" +
-                            "Status atual de " + personagens[profissao].nome + ": \n" +
+                            "Status atuais de " + personagens[profissao].nome + ": \n" +
                             "Vida: " + personagens[profissao].vida + "\n" +
                             "Dano: " + personagens[profissao].dano + "\n" +
                             "Ouro: " + personagens[profissao].ouro);
@@ -322,7 +322,7 @@ function start() {
         return;
     } else{
         alert("O homem misterioso vai embora rapidamente, sem ter dito uma palavra se quer");
-        alert("Status atual de " + personagens[profissao].nome + " após interagir com o homem misterioso: \n" +
+        alert("Status atuais de " + personagens[profissao].nome + " após interagir com o homem misterioso: \n" +
                 "Vida: " + personagens[profissao].vida + "\n" +
                 "Dano: " + personagens[profissao].dano + "\n" +
                 "Ouro: " + personagens[profissao].ouro);
@@ -359,7 +359,7 @@ function start() {
     } else{
         personagens[profissao].ouro += prof_mat.ouro;
         alert("Excelente! Admito que você não teve uma luta fácil com esse \"professor\"...");
-        alert("Status atual de " + personagens[profissao].nome + " após a batalha: \n" +
+        alert("Status atuais de " + personagens[profissao].nome + " após a batalha: \n" +
                 "Vida: " + personagens[profissao].vida + "\n" +
                 "Dano: " + personagens[profissao].dano + "\n" +
                 "Ouro: " + personagens[profissao].ouro);
@@ -377,7 +377,7 @@ function start() {
         do{
             duvida = prompt("A caixa possui um pequeno furo em cima dela e uma placa ao seu lado, em que se diz \"Coloque moedas de ouro\".\n" +
                             "Colocar ouro?\nSim (digite um valor de 1 a " + personagens[profissao].ouro + ")\nNão (digite 0)\n\n" +
-                            "Status atual de " + personagens[profissao].nome + ": \n" +
+                            "Status atuais de " + personagens[profissao].nome + ": \n" +
                             "Vida: " + personagens[profissao].vida + "\n" +
                             "Dano: " + personagens[profissao].dano + "\n" +
                             "Ouro: " + personagens[profissao].ouro);
@@ -443,7 +443,7 @@ function start() {
         alert("O cara morreu por ter colocado pouca moeda e ter feito a proeza de pegar sempre a agulha envenenada! KKKK");
         return;
     } else{
-        alert("Status atual de " + personagens[profissao].nome + " após interagir com o homem misterioso: \n" +
+        alert("Status atuais de " + personagens[profissao].nome + " após interagir com o homem misterioso: \n" +
             "Vida: " + personagens[profissao].vida + "\n" +
             "Dano: " + personagens[profissao].dano + "\n" +
             "Ouro: " + personagens[profissao].ouro);
@@ -497,7 +497,7 @@ function start() {
     } else{
         personagens[profissao].ouro += enemyCurso[profissao].ouro;
         alert(". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\nAinda bem que não morreu. Ainda há muito o que descobrir...");
-        alert("Status atual de " + personagens[profissao].nome + " após a batalha: \n" +
+        alert("Status atuais de " + personagens[profissao].nome + " após a batalha: \n" +
                 "Vida: " + personagens[profissao].vida + "\n" +
                 "Dano: " + personagens[profissao].dano + "\n" +
                 "Ouro: " + personagens[profissao].ouro);
@@ -545,6 +545,21 @@ function start() {
     alert("Estantes \"A minha família\", com livros de páginas rasgadas ou riscadas, \"Conhecimentos acadêmicos\", com autoria dos professores que fizeram você aprender algo novo, \"Segredos\", contendo livros que ninguém nunca tocou, e... estante \"Amor\", com apenas um livro e com vários capítulos.");
     alert("Você começa a perceber que essa biblioteca tem tudo o que você sabe, todas as suas memórias e novas memórias que estão, ainda, sendo escritas, em um livro em branco, sobre uma mesa, ao lado de uma caneta tinteiro.\n\nEssa é a sua mente! Você está preso(a) nela!");
     alert("Você começa a pensar em tudo que viu até agora: as lutas, o ambiente, as pessoas, os telões...");
-    alert("Você foi colocado nessa situação, você ")
+    alert("Você foi colocado nessa situação, você não consegue sair daqui nessa situação.");
+    alert("O livro que estava sendo escrito (a memória que estava sendo criada), entitulada \"Cobaia\", parecia até ter tido um começo, mas a tinta do tinteiro está toda derramada na página.");
+    alert("As peças começaram a se encaixar: um lugar fantasioso, suas memórias, sua visão temporária a homens estranhos e da seringa que interrompeu a visão... Você faz parte de um experimento da BSI!");
+    alert("Não entende qual o propósito desse experimento, mas você está vagando pela sua mente enquanto seu corpo está inconsciente.");
+    alert("Você não sabe, ainda, os motivos que levariam os alunos da BSI fazer isso com você, se isso é algo bom ou ruim ou se há uma memória na biblioteca que explique tudo que está acontecendo.");
+    alert("Enquanto você, como \"pessoinha\" que perambula a própria mente, não conseguir se recompor de um estresse intenso, após a carga de informações importantes que teve durante todo o dia, você não conseguirá explorar mais a infinidade de páginas em busca da resposta.");
+    alert("Você derrotou inimigos que impediam, a todo custo, impedir você de descobrir a verdade... mas você descobriu a verdade e não tem nada que possa fazer. Você está preso");
+    alert(". . . . .");
     }
+    
+    alert("Status finais de " + personagens[profissao].nome + ": \n" +
+            "Vida: " + personagens[profissao].vida + "\n" +
+            "Dano: " + personagens[profissao].dano + "\n" +
+            "Ouro: " + personagens[profissao].ouro);
+    alert("Você ganhou! Parabéns.");
+    
+    alert("\n\n\n\n\n\n                                                                                A game by Thomás");
 }
